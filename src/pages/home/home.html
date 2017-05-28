@@ -24,11 +24,12 @@
         <div class="embed-responsive-item" style="width: 60% ; z-index: 90;position: fixed; background-color: black; background: url('images/cover.png'); background-size:cover; " *ngIf="!onPlaying"></div>
     </div>
 
-    <ion-col col-12>
-        <div class="card-background-page">
-            <ion-card col-6 *ngFor="let video of videos.items">
-                
-<img width="50%" height="50%" (click)="playVideo(video.id.videoId)" src="{{video.snippet.thumbnails.high.url}}" />
+    <ion-row>
+       
+        <!--<div class="card-background-page">-->
+            <ion-card col-4 *ngFor="let video of videos.items">
+  <ion-col col-12 >             
+<img (click)="playVideo(video.id.videoId)" src="{{video.snippet.thumbnails.high.url}}" />
                 <div class="card-title">
                     {{video.snippet.title}}
                 </div>
@@ -38,7 +39,8 @@
                 <button class="card-btn" (click)="playVideo(video.id.videoId)">
                     <ion-icon name="play"></ion-icon>
                 </button>
+                </ion-col>
             </ion-card>
-        </div>
-    </ion-col>
+        <!--</div>-->
+    </ion-row>
 </ion-content>
