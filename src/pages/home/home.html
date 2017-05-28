@@ -28,7 +28,7 @@
         <div class="card-background-page">
             <ion-card col-6 *ngFor="let video of videos.items">
                 
-<img width="50%" height="50%" src="{{video.snippet.thumbnails.high.url}}" />
+<img width="50%" height="50%" (click)="playVideo(video.id.videoId)" src="{{video.snippet.thumbnails.high.url}}" />
                 <div class="card-title">
                     {{video.snippet.title}}
                 </div>
